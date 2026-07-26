@@ -2,6 +2,8 @@
 
 A quiet, editorial photography portfolio site. Static HTML/CSS, no build step, no framework — implemented from a Figma design.
 
+https://gaskilinen.github.io/claire-hesten-portfolio/
+
 ## Structure
 
 ```
