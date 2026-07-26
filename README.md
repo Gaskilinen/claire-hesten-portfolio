@@ -12,7 +12,8 @@ A quiet, editorial photography portfolio site. Static HTML/CSS, no build step, n
 ├── tokens.css             Design tokens (colour, spacing, chip styles)
 ├── styles.css             Layout and components
 ├── icons/                 Exported SVG icons (view-album, back arrow)
-├── images/                Source photography
+├── images/                Photography, resized/compressed for web;
+│                          images/originals/ holds the full-resolution source
 └── media/                 Video (web-optimised); media/originals/ holds the
                            untouched source files these were compressed from
 ```
@@ -44,8 +45,16 @@ Videos in `media/` are re-encoded (H.264, CRF 23, `+faststart`) from the origina
 ffmpeg -i input.mp4 -c:v libx264 -preset slow -crf 23 -pix_fmt yuv420p -movflags +faststart output.mp4
 ```
 
+Photos in `images/` are similarly resized/recompressed from the full-resolution originals in `images/originals/` — 1600px on the long edge, quality 82, which comfortably covers the largest size any photo displays at (the grid columns) even at 2x/3x pixel density. If you add a new photo, process it the same way before committing:
+
+```bash
+sips -Z 1600 -s formatOptions 82 input.jpg --out output.jpg
+```
+
+Every `<img>` on the homepage also uses `loading="lazy" decoding="async"`, so only images near the viewport are fetched as the visitor scrolls, rather than all of them at once.
+
 ## Known gaps
 
 - The **View Album** chips on the homepage currently link to `#` (no target page wired up yet).
 - `mediterranean.html` and `alpine.html` exist and render, but nothing on the homepage links to them at the moment.
-- Several files in `images/` and `media/originals/` are very large (tens of MB, one over 100MB) — fine for local dev, but will need Git LFS or exclusion before pushing to GitHub, since GitHub hard-blocks files over 100MB.
+- The full-resolution originals in `images/originals/` and `media/originals/` are still very large (tens of MB, one over 100MB) — fine for local dev, but will need Git LFS or exclusion before pushing to GitHub, since GitHub hard-blocks files over 100MB.
