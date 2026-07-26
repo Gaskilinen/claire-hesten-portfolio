@@ -1,0 +1,81 @@
+/*
+ * ============================================================
+ *  Claire Hesten Portfolio — Design Tokens
+ *  Source: Figma — Photography Portfolio (nodes 1:69, 20:14)
+ *
+ *  Structure
+ *  ─────────────────────────────────────────────────────────
+ *  1. Primitives   — raw values, no semantic meaning
+ *  2. Tokens       — purpose-driven aliases to primitives
+ * ============================================================
+ */
+
+/* ============================================================
+   1. PRIMITIVES
+   ============================================================ */
+
+:root {
+
+  /* ── Neutral ── */
+  --color-neutral-000: #ffffff;
+  --color-neutral-100: #f4f4f1;
+  --color-neutral-300: #d9d9d9;
+  --color-neutral-900: #000000;
+
+  /* ── Brand accent (chip / interactive) ── */
+  --color-brand-secondary: #362237;
+  --color-border-primary:  #eaecef;
+
+  /* ── Spacing ── */
+  --space-1: 18px;
+  --space-2: 28px;
+  --space-3: 58px;
+  --space-4: 120px;
+  --space-5: 120px;
+  --space-6: 40px;
+  --space-7: 20px;
+  --space-8: 24px;
+  --space-9: 8px;
+  --space-10: 12px;
+  --space-11: 32px;
+  --space-12: 80px;
+
+}
+
+/* ============================================================
+   2. SEMANTIC TOKENS
+   ============================================================ */
+
+:root {
+
+  /* ── Surface ── */
+  --surface-page:    var(--color-neutral-100); /* #f4f4f1 — page background */
+  --surface-media:   var(--color-neutral-300); /* #d9d9d9 — image / video placeholder */
+
+  /* ── Text ── */
+  --text-primary:    var(--color-neutral-900); /* #000000 — headings, labels, body */
+  --text-chip:       var(--color-brand-secondary); /* #362237 — chip label + icon */
+
+  /* ── Layout ── */
+  --content-max-width: 1440px;
+  --content-gutter:    var(--space-5);   /* 120px side margin at desktop width */
+  --row-gap:           var(--space-1);   /* 18px between images in a row */
+  --section-gap:       var(--space-4);   /* 120px between major sections */
+  --media-caption-gap: var(--space-7);   /* 20px between a grid image and its caption */
+  --caption-gap:       var(--space-2);   /* 28px between a full-bleed video and its caption */
+  --caption-item-gap:  var(--space-3);   /* 58px between caption label parts */
+  --feature-gap:       var(--space-6);   /* 40px between feature image and album panel */
+  --nav-gap:           var(--space-11);  /* 32px between header nav items */
+  --header-padding-y:  var(--space-6);   /* 40px header vertical padding */
+  --banner-gap:        var(--space-12);  /* 80px between the banner and the body */
+
+  /* ── Chip (View Album / Back) ── */
+  --chip-bg:        var(--color-neutral-000);
+  --chip-border:    var(--color-border-primary);
+  --chip-text:      var(--color-brand-secondary);
+  --chip-radius:    8px;
+  --chip-height:    34px;
+  --chip-padding-x: var(--space-10); /* 12px */
+  --chip-gap:       var(--space-9);  /* 8px */
+
+}

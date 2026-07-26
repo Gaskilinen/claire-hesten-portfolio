@@ -1,0 +1,281 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--surface-page);
+  color: var(--text-primary);
+  line-height: 1.34;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wrapper {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 var(--content-gutter);
+}
+
+/* ---------- HEADER ---------- */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--header-padding-y);
+  padding-bottom: var(--header-padding-y);
+}
+
+.site-header__name {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-size: 28px;
+}
+
+.site-header__social {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.site-header__left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8); /* 24px */
+}
+
+.site-header__right {
+  display: flex;
+  align-items: center;
+  gap: var(--nav-gap); /* 32px */
+}
+
+/* ---------- CHIP (View Album / Back) ---------- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--chip-gap);
+  height: var(--chip-height);
+  padding: 0 var(--chip-padding-x);
+  background: var(--chip-bg);
+  border: 1px solid var(--chip-border);
+  border-radius: var(--chip-radius);
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  color: var(--chip-text);
+  white-space: nowrap;
+}
+
+.chip__icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.chip__icon img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ---------- BODY / SECTIONS ---------- */
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap);
+  padding-bottom: 120px;
+}
+
+.figure {
+  display: flex;
+  flex-direction: column;
+  gap: var(--media-caption-gap);
+  width: 100%;
+}
+
+.figure__media {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--surface-media);
+  object-fit: cover;
+}
+
+/* Full-bleed banner (edge-to-edge hero, no side margins) */
+.figure--banner {
+  gap: var(--caption-gap);
+}
+
+/* scotland.mp4 / cotswolds.mp4 are native 1920x1080 (16:9) */
+.figure--banner .figure__media {
+  aspect-ratio: 1920 / 1080;
+}
+
+/* Full-width media within the wrapper (mid-page video) */
+.figure--wide {
+  gap: var(--caption-gap);
+}
+
+.figure--wide .figure__media {
+  aspect-ratio: 1920 / 1080;
+}
+
+/* Row-item media (3-up grid) — uniform box so every row lines up.
+   The last row is the exception: those images set their own native
+   aspect-ratio inline and override this. */
+.figure--grid .figure__media {
+  aspect-ratio: 2201 / 2731;
+}
+
+.figure__caption {
+  display: flex;
+  align-items: center;
+  gap: var(--caption-item-gap);
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--row-gap);
+  align-items: start;
+}
+
+/* Section — heading + chip above a grid ("My Recents", "Title") */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7); /* 20px */
+  width: 100%;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.section-header__title {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-size: 28px;
+}
+
+/* Text panel — replaces an image in a 3-up row (title + description) */
+.text-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--space-7); /* 20px */
+}
+
+.text-panel__title {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-size: 28px;
+  white-space: nowrap;
+}
+
+.text-panel__body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 300;
+}
+
+/* Full-bleed banner section (outside .wrapper) */
+.banner {
+  width: 100%;
+  margin-bottom: var(--banner-gap);
+}
+
+.banner .figure__caption {
+  padding-left: var(--content-gutter);
+}
+
+/* Album pages — 2-up row and full-width hero */
+.row--half {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--row-gap);
+  align-items: start;
+}
+
+.figure--half .figure__media {
+  aspect-ratio: 589.5 / 506;
+}
+
+.figure--album-hero .figure__media {
+  aspect-ratio: 1197 / 506;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  :root {
+    --content-gutter: 40px;
+    --section-gap: 56px;
+  }
+
+  .row,
+  .row--half {
+    grid-template-columns: 1fr;
+  }
+
+  .figure--half .figure__media {
+    aspect-ratio: 1197 / 545;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-7);
+  }
+
+  .text-panel {
+    padding-top: var(--space-7);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --content-gutter: 20px;
+  }
+
+  .site-header {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .site-header__left,
+  .site-header__right {
+    gap: 16px;
+  }
+
+  .figure__caption {
+    gap: 24px;
+  }
+
+  .banner .figure__caption {
+    padding-left: var(--content-gutter);
+  }
+}

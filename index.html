@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claire Hesten – Photography</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300&family=Roboto:wght@400&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="tokens.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header wrapper">
+    <p class="site-header__name">Claire Hesten</p>
+    <div class="site-header__right">
+      <a class="site-header__social" href="mailto:claire@hesten.co.uk">claire@hesten.co.uk</a>
+    </div>
+  </header>
+
+  <section class="banner">
+    <figure class="figure figure--banner">
+      <video class="figure__media" autoplay muted loop playsinline>
+        <source src="media/scotland.mp4" type="video/mp4" />
+      </video>
+      <figcaption class="figure__caption">
+        <span>Cotswolds 2026</span>
+        <span>Filmed on Fuji x100vi</span>
+      </figcaption>
+    </figure>
+  </section>
+
+  <main class="gallery wrapper">
+    <!-- TODO: replace remaining media placeholders with real photography/video -->
+
+    <!-- Row 1 — "My Recents" -->
+    <div class="section">
+      <div class="section-header">
+        <p class="section-header__title">My Recents</p>
+       <!-- <p> <a class="chip" href="#">
+          <span>View Album</span>
+          <span class="chip__icon"><img src="icons/view-album.svg" alt="" /></span>
+        </a></p> -->
+      </div>
+      <div class="row">
+        <figure class="figure figure--grid">
+          <img class="figure__media" src="images/scotland_hills.jpg" alt="Scottish Hills">
+          <figcaption class="figure__caption">
+            <span>Loch Clair</span>
+            <span>Fuji x100vi</span>
+          </figcaption>
+        </figure>
+        <figure class="figure figure--grid">
+          <img class="figure__media" src="images/highlandcow.jpg" alt="Higland Cow">
+          <figcaption class="figure__caption">
+            <span>Highland Cow</span>
+            <span>Fuji x100vi</span>
+          </figcaption>
+        </figure>
+        <figure class="figure figure--grid">
+          <img class="figure__media" src="images/woodland.jpg" alt="Woodland View">
+          <figcaption class="figure__caption">
+            <span>Lost in the Woods</span>
+            <span>Fuji x100vi</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- Row 5 — two images + text panel -->
+    <div class="row">
+      <figure class="figure figure--grid">
+        <img class="figure__media" src="images/london_1.jpg" alt="Cow in the field">
+        <figcaption class="figure__caption">
+          <span>Streets of London</span>
+          <span>Fuji x100vi</span>
+        </figcaption>
+      </figure>
+      <figure class="figure figure--grid">
+        <img class="figure__media" src="images/london_2.jpg" alt="Cow in the field">
+        <figcaption class="figure__caption">
+          <span>People of London</span>
+          <span>Fuji x100vi</span>
+        </figcaption>
+      </figure>
+      <div class="text-panel">
+        <p class="text-panel__title">Exploring London</p>
+        <p class="text-panel__body">Old vs New. The characters and the careers.</p>
+      </div>
+    </div>
+
+    <!-- Video 2 -->
+    <figure class="figure figure--wide">
+      <video class="figure__media" autoplay muted loop playsinline>
+        <source src="media/cotswolds.mp4" type="video/mp4" />
+      </video>
+      <figcaption class="figure__caption">
+        <span>Cotswolds 2026</span>
+        <span>Filmed on Fuji x100vi</span>
+      </figcaption>
+    </figure>
+
+    <!-- Row 6 -->
+    <div class="section">
+      <div class="section-header">
+        <p class="section-header__title">Dalmatian Coast</p>
+        <!-- <a class="chip" href="#">
+          <span>View Album</span>
+          <p><span class="chip__icon"><img src="icons/view-album.svg" alt="" /></span> </p> -->
+        </a>
+      </div>
+      <div class="row">
+        <figure class="figure figure--grid">
+          <img class="figure__media" src="images/split_13.jpg" alt="Split Market">
+          <figcaption class="figure__caption">
+            <span>Split Market</span>
+            <span>Fuji x100vi</span>
+          </figcaption>
+        </figure>
+        <figure class="figure figure--grid">
+          <img class="figure__media" src="images/split_15.jpg" alt="Couple working in the market">
+          <figcaption class="figure__caption">
+            <span>Couple working in the market</span>
+            <span>Fuji x100vi</span>
+          </figcaption>
+        </figure>
+        <figure class="figure figure--grid">
+          <img class="figure__media" src="images/summer_1.jpg" alt="Woman waiting in sun">
+          <figcaption class="figure__caption">
+            <span>People of Hvar</span>
+            <span>Fuji x100vi</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+
+  <!-- Row 7 -->
+    <div class="row">
+      <figure class="figure figure--grid">
+        <img class="figure__media" src="images/banburgh_beach.jpg" alt="Banburgh Beach">
+        <figcaption class="figure__caption">
+          <span>Bamburgh Beach</span>
+          <span>Cannon 600d</span>
+        </figcaption>
+      </figure>
+      <figure class="figure figure--grid">
+        <img class="figure__media" src="images/cow.jpg" alt="Cow in the field">
+        <figcaption class="figure__caption">
+          <span>Not a Highland Cow</span>
+          <span>Cannon 600d</span>
+        </figcaption>
+      </figure>
+      <figure class="figure figure--grid">
+        <img class="figure__media" src="images/banburgh_castle.jpg" alt="Bamburgh Castle">
+        <figcaption class="figure__caption">
+          <span>Bamburgh Castle</span>
+          <span>Cannon 600d</span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <!-- Row 8 -->
+    <div class="row">
+      <figure class="figure figure--grid">
+        <img class="figure__media" src="images/b&w_mountain_cyclists.jpg" alt="Cyclists going down a mountain" style="aspect-ratio: 3273 / 4309;">
+        <figcaption class="figure__caption">
+          <span>Alpine Cyclists</span>
+          <span>Cannon 600d</span>
+        </figcaption>
+      </figure>
+      <figure class="figure figure--grid">
+        <img class="figure__media" src="images/b&w_mountaincampers.jpg" alt="Mont Blanc Campers" style="aspect-ratio: 3640 / 4791;">
+        <figcaption class="figure__caption">
+          <span>Mont Blanc Campers</span>
+          <span>Cannon 600d</span>
+        </figcaption>
+      </figure>
+      <figure class="figure figure--grid">
+        <img class="figure__media" src="images/b&w_snowmountainhikers.jpg" alt="Mont Blanc Hikers" style="aspect-ratio: 3534 / 4652;">
+        <figcaption class="figure__caption">
+          <span>Mont Blanc Hikers</span>
+          <span>Cannon 600d</span>
+        </figcaption>
+      </figure>
+    </div>
+  </main>
+</body>
+</html>
